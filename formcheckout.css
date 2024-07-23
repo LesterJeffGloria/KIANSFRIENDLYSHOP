@@ -1,0 +1,316 @@
+/* General styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, rgb(3, 168, 168), rgb(1, 233, 233) );
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center align everything horizontally */
+    align-items: center; /* Center align everything vertically */
+    min-height: 100vh; /* Ensure full height of the viewport */
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #071952;
+    padding: 20px 9%;
+    display: flex;
+    justify-content: center; /* Center align items horizontally */
+    align-items: center; /* Center align items vertically */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #EBF4F6;
+}
+
+.logo-pic {
+    width: 80px; /* Adjust as needed */
+    height: auto;
+    margin-right: 15px;
+}
+
+.logo {
+    font-size: 2rem; /* Adjust as needed */
+    font-weight: bolder;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 150px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #071952;
+}
+
+/* Styling for order items */
+.order-items {
+    margin-top: 20px;
+}
+
+.order-items {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.order-items img {
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.order-items .item-details {
+    flex: 1;
+}
+
+.order-items h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #071952;
+    margin-left: 10px;
+}
+
+.order-items p {
+    font-size: 15px;
+    color: #000000;
+    margin-left: 10px;
+}
+
+/* Styling for form inputs */
+.checkout-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #071952;
+    font-weight: bold;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="tel"],
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+.checkout-form textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: Verdana;
+    font-size: 16px;
+}
+
+.checkout-form button[type="submit"] {
+    background-color: #088395;
+    color: #EBF4F6;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.checkout-form button[type="submit"]:hover {
+    background-color: #37B7C3;
+}
+
+.checkout-form button[type="submit"]:focus {
+    outline: none;
+}
+
+/* Total Price Container */
+.total-price-container {
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-price-container p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #006170;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-item .item-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .total-price-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 5%;
+    }
+
+    .logo-pic {
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .checkout-form button[type="submit"] {
+        padding: 10px;
+    }
+}
+
+.go-back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #071952;
+}
+
+.go-back-link:hover {
+    text-decoration: underline;
+}
+
+/* Styles for Checkout Receipt */
+.logo-receipt img{
+    justify-self: center;
+}
+.receipt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Limit maximum width */
+    max-height: 80vh; /* Limit height to a percentage of viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+}
+
+.receipt-content {
+    text-align: center;
+}
+
+.receipt h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.receipt-details {
+    margin-bottom: 20px;
+}
+
+.receipt-details p {
+    margin: 5px 0;
+}
+
+.order-items, .receipt-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling for the item list */
+}
+
+.order-item, .receipt-item {
+    display: flex;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.order-item img, .receipt-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.order-item-info, .receipt-item-info {
+    flex: 1;
+}
+
+.order-success {
+    font-weight: bold;
+    color: rgb(0, 90, 90);
+    margin-top: 20px;
+}
+
+.title-container {
+    display:flex;
+    align-items: center;
+}
+
+
+.title-pic {
+    width: 60px; /* Adjust as needed */
+    height: auto;
+    margin-right: 15px;
+}
+
+.title-logo {
+    font-size: 20px; /* Adjust as needed */
+    font-weight: bolder;
+    color: teal;
+}
